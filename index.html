@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>SMART KEY SYSTEM 🔥</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Consolas;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,
+#2a0000,
+#120000,
+#000);
+
+color:#ff4d4d;
+
+padding:12px;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/* NEON */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+border:3px solid #ff0000;
+
+border-radius:18px;
+
+pointer-events:none;
+
+box-shadow:
+
+0 0 20px #ff0000,
+
+0 0 40px #ff0000;
+
+z-index:99999;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+max-width:560px;
+
+margin:auto;
+
+padding-bottom:120px;
+
+}
+
+/* CARD */
+
+.card{
+
+background:
+linear-gradient(
+180deg,
+rgba(30,0,0,.95),
+rgba(10,0,0,.95)
+);
+
+border:2px solid rgba(255,0,0,.35);
+
+border-radius:24px;
+
+padding:20px;
+
+margin-bottom:18px;
+
+box-shadow:
+
+0 0 18px rgba(255,0,0,.2),
+
+inset 0 0 10px rgba(255,0,0,.1);
+
+}
+
+/* TITLE */
+
+.title{
+
+font-size:32px;
+
+font-weight:bold;
+
+text-align:center;
+
+margin-bottom:14px;
+
+text-shadow:
+0 0 15px #ff0000;
+
+}
+
+.logo{
+
+font-size:85px;
+
+text-align:center;
+
+margin-bottom:10px;
+
+}
+
+/* INPUT */
+
+input{
+
+width:100%;
+
+height:56px;
+
+background:#180000;
+
+border:2px solid #ff0000;
+
+border-radius:18px;
+
+padding:14px;
+
+font-size:16px;
+
+color:#ff4d4d;
+
+outline:none;
+
+margin-bottom:14px;
+
+}
+
+/* BUTTON */
+
+button{
+
+width:100%;
+
+height:56px;
+
+border:none;
+
+border-radius:18px;
+
+background:#ff0000;
+
+color:#fff;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 0 16px rgba(255,0,0,.4);
+
+}
+
+/* KEY */
+
+.key-box{
+
+margin-top:14px;
+
+background:#180000;
+
+border:2px solid #ff0000;
+
+border-radius:18px;
+
+padding:16px;
+
+text-align:center;
+
+font-size:18px;
+
+font-weight:bold;
+
+word-break:break-all;
+
+}
+
+/* STATUS */
+
+.status{
+
+margin-top:14px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:#160000;
+
+border:2px solid rgba(255,0,0,.35);
+
+text-align:center;
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+/* GRID */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+
+margin-top:14px;
+
+}
+
+.box{
+
+background:#180000;
+
+border:2px solid rgba(255,0,0,.35);
+
+border-radius:18px;
+
+padding:14px;
+
+text-align:center;
+
+}
+
+.big{
+
+font-size:28px;
+
+font-weight:bold;
+
+margin-bottom:6px;
+
+text-shadow:
+0 0 10px #ff0000;
+
+}
+
+.small{
+
+font-size:13px;
+
+color:#ff9d9d;
+
+}
+
+.footer{
+
+text-align:center;
+
+font-size:13px;
+
+color:#ff8a8a;
+
+margin-top:12px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+
+<div class="card">
+
+<div class="logo">
+🔥
+</div>
+
+<div class="title">
+
+SMART KEY SYSTEM
+
+</div>
+
+<div style="
+text-align:center;
+font-size:14px;
+line-height:1.8;
+color:#ff9d9d;
+">
+
+• RANDOM KEY FIREBASE<br>
+
+• DEVICE LOCK SYSTEM<br>
+
+• RED NEON SMART UI
+
+</div>
+
+</div>
+
+<!-- CREATE -->
+
+<div class="card">
+
+<input
+type="number"
+id="dayInput"
+placeholder="SỐ NGÀY KEY">
+
+<button onclick="createKey()">
+
+TẠO KEY RANDOM
+
+</button>
+
+<div class="key-box"
+id="createdKey">
+
+CHƯA CÓ KEY
+
+</div>
+
+</div>
+
+<!-- CHECK -->
+
+<div class="card">
+
+<input
+type="text"
+id="checkInput"
+placeholder="NHẬP KEY">
+
+<button onclick="checkKey()">
+
+KIỂM TRA KEY
+
+</button>
+
+<div class="status"
+id="statusBox">
+
+TRẠNG THÁI KEY
+
+</div>
+
+<div class="grid">
+
+<div class="box">
+
+<div class="big"
+id="remainDay">
+
+0
+
+</div>
+
+<div class="small">
+
+NGÀY CÒN
+
+</div>
+
+</div>
+
+<div class="box">
+
+<div class="big"
+id="onlineBox">
+
+OFF
+
+</div>
+
+<div class="small">
+
+TRẠNG THÁI
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+FIREBASE REALTIME • SMART PANEL
+
+</div>
+
+</div>
+
+<script type="module">
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+set,
+get
+}
+from
+"https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
+
+/* FIREBASE */
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyBU9c-W9aIy-l2soskbXAZbdHLOOom8Cks",
+
+authDomain:
+"duchuykey.firebaseapp.com",
+
+databaseURL:
+"https://duchuykey-default-rtdb.firebaseio.com",
+
+projectId:
+"duchuykey",
+
+storageBucket:
+"duchuykey.firebasestorage.app",
+
+messagingSenderId:
+"674334923476",
+
+appId:
+"1:674334923476:web:d90bd3cf6c5c108b673941"
+
+};
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getDatabase(app);
+
+/* RANDOM KEY */
+
+function randomKey(){
+
+const chars =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+const time =
+Date.now()
+.toString()
+.slice(-6);
+
+let random = "";
+
+for(let i=0;i<10;i++){
+
+random +=
+chars[
+Math.floor(
+Math.random()*chars.length
+)
+];
+
+}
+
+return (
+time + random
+);
+
+}
+
+/* CREATE */
+
+window.createKey =
+async function(){
+
+const days =
+parseInt(
+document.getElementById(
+"dayInput"
+).value
+);
+
+if(!days){
+
+alert("NHẬP SỐ NGÀY");
+
+return;
+
+}
+
+const key =
+randomKey();
+
+const expire =
+Date.now()
++
+(days * 86400000);
+
+await set(
+ref(db,"keys/" + key),
+{
+
+key:key,
+
+expire:expire,
+
+created:Date.now(),
+
+device:"",
+
+online:false,
+
+status:"OFFLINE"
+
+}
+
+);
+
+document.getElementById(
+"createdKey"
+).innerText =
+key;
+
+}
+
+/* CHECK */
+
+window.checkKey =
+async function(){
+
+const key =
+document.getElementById(
+"checkInput"
+).value.trim();
+
+if(!key){
+
+alert("NHẬP KEY");
+
+return;
+
+}
+
+const snap =
+await get(
+ref(db,"keys/" + key)
+);
+
+if(!snap.exists()){
+
+document.getElementById(
+"statusBox"
+).innerText =
+"❌ KEY KHÔNG TỒN TẠI";
+
+return;
+
+}
+
+const data =
+snap.val();
+
+const remain =
+data.expire - Date.now();
+
+if(remain <= 0){
+
+document.getElementById(
+"statusBox"
+).innerText =
+"⌛ KEY ĐÃ HẾT HẠN";
+
+return;
+
+}
+
+const d =
+Math.floor(
+remain / 86400000
+);
+
+const h =
+Math.floor(
+(remain % 86400000)
+/ 3600000
+);
+
+document.getElementById(
+"statusBox"
+).innerText =
+
+"✅ KEY HỢP LỆ\n" +
+
+d + " NGÀY " +
+h + " GIỜ";
+
+document.getElementById(
+"remainDay"
+).innerText =
+d;
+
+document.getElementById(
+"onlineBox"
+).innerText =
+data.online
+?
+"ONLINE"
+:
+"OFFLINE";
+
+}
+
+</script>
+
+</body>
+
+</html>
